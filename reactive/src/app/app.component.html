@@ -1,0 +1,100 @@
+ <div class="main">
+  
+    <div class="container-fluid">
+      
+        <div class="card content mx-auto pt-4 pb-4">
+          <div class="row">
+            <div class="card-body pt-3">
+              <h1>Registration Form</h1>
+            <form [formGroup]="register" (ngSubmit)="submit(register)">
+    
+              <div class="formGroup">
+                <div class="row mb-3">
+                  <label for="inputPassword3" class="col-sm-3 col-form-label">Name</label>
+                  <div class="col-sm-9">
+                    <input formControlName="name" type="text" class="form-control" name="confirm">
+                    <div *ngIf = "e.name.invalid && e.name.touched" class="alert alert-danger d-flex align-items-center">
+                      <div *ngIf="e.name.errors?.required">This field is required!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="formGroup">
+                    <div class="row mb-3">
+                      <label for="inputPassword3" class="col-sm-6 col-form-label">Age</label>
+                      <div class="col-sm-6">
+                        <input formControlName="age" type="text" class="form-control" name="confirm">
+                        <div *ngIf = "e.age.invalid && e.age.touched" class="alert alert-danger d-flex align-items-center">
+                          <div *ngIf="e.age.errors?.required">Required!</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="formGroup">
+                    <div class="row mb-3">
+                      <label for="inputPassword3" class="col-sm-5 col-form-label">Admission no</label>
+                      <div class="col-sm-7">
+                        <input formControlName="adm" type="text" class="form-control" name="confirm">
+                        <div *ngIf = "e.adm.invalid && e.adm.touched" class="alert alert-danger d-flex align-items-center">
+                          <div *ngIf="e.adm.errors?.required">Required!</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+
+              <div class="form-group">
+                <div class="row mb-3">
+                  <label class="col-sm-3 col-form-label">Email</label>
+                  <div class="col-sm-9">
+                    <input formControlName="email" type="email" class="form-control" id="inputEmail3" >
+                    <div *ngIf = "e.email.errors?.required && e.email.touched" class="alert alert-danger d-flex align-items-center">
+                      This field is required!
+                    </div>
+                    <div *ngIf = "e.email.errors?.email && e.email.touched" class="alert alert-danger d-flex align-items-center">
+                      Enter a valid email id!
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="formGroup">
+                <div class="row mb-3">
+                  <label for="inputPassword3" class="col-sm-3 col-form-label">Password</label>
+                  <div class="col-sm-9">
+                    <input formControlName="password" type="password" class="form-control" id="inputPassword3" name="password">
+                    <div *ngIf = "e.password.errors?.required && e.password.touched" class="alert alert-danger d-flex align-items-center">
+                      This field is required!
+                    </div>
+                    <div *ngIf = "e.password.errors?.minlength && e.password.touched" class="alert alert-danger d-flex align-items-center">
+                      Password should have atleast 6 characters!
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              
+
+              <button [disabled]="register.invalid" class="sub col-12 btn-lg" type="submit">Submit</button>
+            </form>
+            </div>
+            
+            
+          </div>
+        </div>
+    
+      
+    </div>
+    
+  </div>
+
+
+
+<router-outlet></router-outlet>
