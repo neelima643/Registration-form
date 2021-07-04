@@ -1,2 +1,2 @@
-# REgistration-form
+# Registration-form
 Angular reactive and template driven form
